@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bride & Groom — Wedding Invitation</title>
+
+    <!-- EARLY: lock scrolling before styles/scripts load -->
+    <script>document.documentElement.classList.add('intro-active');</script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- GSAP (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <noscript>
+      <style>
+        html.intro-active, body.intro-active { overflow: auto !important; height: auto !important; }
+        #splash { display: none !important; }
+      </style>
+    </noscript>
+  </head>
+
+  <body>
+    <!-- ================= SPLASH MESSAGE INTRO ================= -->
+    <section id="splash" aria-hidden="true">
+      <!-- Black opening panels -->
+      <div class="black-panel top"></div>
+      <div class="black-panel bottom"></div>
+
+      <div class="splash-inner">
+        <div class="splash-message" id="splash-msg-1">
+          <span class="splash-letter">W</span>
+          <span class="splash-letter">e</span>
+          <span class="splash-letter">l</span>
+          <span class="splash-letter">c</span>
+          <span class="splash-letter">o</span>
+          <span class="splash-letter">m</span>
+          <span class="splash-letter">e</span>
+          <span class="splash-space"></span>
+          <span class="splash-letter">t</span>
+          <span class="splash-letter">o</span>
+          <span class="splash-space"></span>
+          <span class="splash-letter">O</span>
+          <span class="splash-letter">u</span>
+          <span class="splash-letter">r</span>
+          <span class="splash-space"></span>
+          <span class="splash-letter">W</span>
+          <span class="splash-letter">e</span>
+          <span class="splash-letter">d</span>
+          <span class="splash-letter">d</span>
+          <span class="splash-letter">i</span>
+          <span class="splash-letter">n</span>
+          <span class="splash-letter">g</span>
+        </div>
+        <div class="splash-message" id="splash-msg-2">
+          <span class="splash-letter">A</span>
+          <span class="splash-space"></span>
+          <span class="splash-letter">L</span>
+          <span class="splash-letter">o</span>
+          <span class="splash-letter">v</span>
+          <span class="splash-letter">e</span>
+          <span class="splash-space"></span>
+          <span class="splash-letter">W</span>
+          <span class="splash-letter">o</span>
+          <span class="splash-letter">r</span>
+          <span class="splash-letter">t</span>
+          <span class="splash-letter">h</span>
+          <span class="splash-space"></span>
+          <span class="splash-letter">C</span>
+          <span class="splash-letter">e</span>
+          <span class="splash-letter">l</span>
+          <span class="splash-letter">e</span>
+          <span class="splash-letter">b</span>
+          <span class="splash-letter">r</span>
+          <span class="splash-letter">a</span>
+          <span class="splash-letter">t</span>
+          <span class="splash-letter">i</span>
+          <span class="splash-letter">n</span>
+          <span class="splash-letter">g</span>
+        </div>
+        <div class="splash-message" id="splash-msg-3">
+          <span class="splash-letter">S</span>
+          <span class="splash-letter">a</span>
+          <span class="splash-letter">v</span>
+          <span class="splash-letter">e</span>
+          <span class="splash-space"></span>
+          <span class="splash-letter">t</span>
+          <span class="splash-letter">h</span>
+          <span class="splash-letter">e</span>
+          <span class="splash-space"></span>
+          <span class="splash-letter">D</span>
+          <span class="splash-letter">a</span>
+          <span class="splash-letter">t</span>
+          <span class="splash-letter">e</span>
+          <span class="splash-space"></span>
+          <span class="heart-emoji">❤️</span>
+        </div>
+        
+        <!-- Skip Button (hidden but functional) -->
+        <div class="skip-splash">
+          <p>Press <kbd>SPACE</kbd> to skip</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+      <!-- ================= BURGER MENU ================= -->
+      <div class="burger-menu">
+        <div class="burger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="nav-sidebar">
+          <ul class="nav-links">
+            <li><a href="#hero" class="nav-link" data-section="hero">Home</a></li>
+            <li><a href="#groom" class="nav-link" data-section="groom">Groom</a></li>
+            <li><a href="#bride" class="nav-link" data-section="bride">Bride</a></li>
+            <li><a href="#our-big-day" class="nav-link" data-section="ourBigDay">Our Big Day</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- ================= HERO SECTION ================= -->
+      <section class="hero-section" id="hero">
+        <img
+          src="images/hero-bg.jpg"
+          alt="Couple background"
+          class="hero-bg-image"
+        />
+        <div class="hero-content">
+          <div class="save-card">
+            <div class="save-photo">
+              <img src="images/save-photo.jpg" alt="Couple portrait" />
+            </div>
+            <p class="tiny-upper">WE'RE GETTING MARRIED</p>
+            <h2 class="hero-names">Bride &amp; Groom</h2>
+            <p class="hero-date">SUNDAY, FEBRUARY 17, 2026</p>
+            <div class="hero-cta">
+              <button class="btn btn-primary add-calendar-btn">ADD TO CALENDAR</button>
+              <a class="btn btn-ghost" href="#rsvp">RSVP NOW</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Black screen that rises with scroll -->
+        <div class="black-screen-rise">
+          <div class="black-screen-curved"></div>
+        </div>
+      </section>
+
+      <!-- ================= GROOM SECTION ================= -->
+      <section class="groom-section" id="groom">
+        <div class="section-content">
+          <div class="couple-container">
+            <div class="couple-img">
+              <img src="images/groom.png" alt="Groom">
+            </div>
+            <div class="couple-text">
+              <h2 class="name">Groom Name</h2>
+              <p class="quote">"I can't wait to spend forever with you."</p>
+              <div class="details">
+                <p><strong>About Him:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                <p><strong>His Passion:</strong> Music, travel, and making her laugh every day.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= BRIDE SECTION ================= -->
+      <section class="bride-section" id="bride">
+        <div class="section-content">
+          <div class="couple-container reverse">
+            <div class="couple-img">
+              <img src="images/bride.png" alt="Bride">
+            </div>
+            <div class="couple-text">
+              <h2 class="name">Bride Name</h2>
+              <p class="quote">"Love brought us together, and forever keeps us here."</p>
+              <div class="details">
+                <p><strong>About Her:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                <p><strong>Her Passion:</strong> Photography, cooking, and their shared adventures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= OUR BIG DAY SECTION ================= -->
+      <section class="our-big-day-section" id="our-big-day">
+        <div class="our-big-day-content">
+          <!-- Countdown Section -->
+          <div class="countdown-section">
+            <h2 class="countdown-title">Our Big Day Awaits</h2>
+            
+            <div class="countdown-grid">
+              <div class="countdown-item" data-days>
+                <span class="countdown-number">344</span>
+                <span class="countdown-label">Days</span>
+              </div>
+              <div class="countdown-item" data-hours>
+                <span class="countdown-number">16</span>
+                <span class="countdown-label">Hours</span>
+              </div>
+              <div class="countdown-item" data-minutes>
+                <span class="countdown-number">53</span>
+                <span class="countdown-label">Mins</span>
+              </div>
+              <div class="countdown-item" data-seconds>
+                <span class="countdown-number">40</span>
+                <span class="countdown-label">Secs</span>
+              </div>
+            </div>
+            
+            <div class="date-display">
+              <div class="date-month">Feb</div>
+              <div class="date-day">17</div>
+              <div class="date-year">2026</div>
+            </div>
+          </div>
+
+          <!-- Save the Date -->
+          <div class="save-date-section">
+            <h3 class="save-date-title">Save the Date</h3>
+            <p class="save-date-subtitle">February 17, 2026 – Los Baños, Laguna</p>
+            <button class="save-date-btn">Add to Calendar</button>
+          </div>
+
+          <!-- Venues Section -->
+          <div class="venues-section">
+            <h2 class="venues-title">The Venues</h2>
+            
+            <div class="venues-grid">
+              <div class="venue-card" data-venue="ceremony">
+                <h3 class="venue-type">CEREMONY</h3>
+                <h4 class="venue-name">St. Something Cathedral</h4>
+                <p class="venue-address">148 Barnbang, Los Baños</p>
+                <div class="venue-actions">
+                  <a href="#" class="venue-btn">VIEW MAP</a>
+                  <a href="#" class="venue-btn">VIEW GALLERY</a>
+                </div>
+              </div>
+              
+              <div class="venue-card" data-venue="reception">
+                <h3 class="venue-type">RECEPTION</h3>
+                <h4 class="venue-name">Something Events Place</h4>
+                <p class="venue-address">789 Tadick, Los Baños</p>
+                <div class="venue-actions">
+                  <a href="#" class="venue-btn">VIEW MAP</a>
+                  <a href="#" class="venue-btn">VIEW GALLERY</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Background music -->
+    <audio id="intro-audio" loop preload="auto" crossorigin="anonymous">
+      <source src="https://cdn.simple-music.xyz/piano-soft.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
